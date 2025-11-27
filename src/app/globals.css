@@ -1,26 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ========================================
+   STARTUP THEME (Current - Bright Green)
+   ======================================== */
+:root,
+[data-theme="startup"] {
+  /* Backgrounds */
+  --color-dark: #0a0a0b;
+  --color-darker: #050506;
+  --color-surface: #18181b;
+  --color-surface-elevated: #1f1f23;
+
+  /* Text */
+  --color-light: #fafafa;
+  --color-muted: #71717a;
+
+  /* Borders */
+  --color-border: #27272a;
+  --color-border-light: #3f3f46;
+
+  /* Primary Accent (Green) */
+  --color-primary: #22c55e;
+  --color-primary-dim: #16a34a;
+  --color-primary-glow: rgba(34, 197, 94, 0.15);
+  --color-primary-text: #0a0a0b;
+
+  /* Secondary (Blue) */
+  --color-secondary: #3b82f6;
+  --color-secondary-dim: #2563eb;
+  --color-secondary-glow: rgba(59, 130, 246, 0.15);
+
+  /* Tertiary (Purple - for tracking/transit) */
+  --color-tertiary: #8b5cf6;
+  --color-tertiary-dim: #7c3aed;
+  --color-tertiary-glow: rgba(139, 92, 246, 0.15);
+
+  /* Status Colors */
+  --color-success: #22c55e;
+  --color-success-glow: rgba(34, 197, 94, 0.15);
+  --color-danger: #ef4444;
+  --color-danger-glow: rgba(239, 68, 68, 0.15);
+  --color-warning: #f59e0b;
+  --color-warning-glow: rgba(245, 158, 11, 0.15);
+  --color-info: #3b82f6;
+  --color-info-glow: rgba(59, 130, 246, 0.15);
+
+  /* Verification/Badge Colors */
+  --color-verified: #22c55e;
+  --color-verified-bg: rgba(34, 197, 94, 0.1);
+  --color-verified-border: rgba(34, 197, 94, 0.3);
+
+  /* Gradient */
+  --gradient-primary: linear-gradient(135deg, #22c55e, #16a34a);
+  --gradient-hero: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(34, 197, 94, 0.15), transparent);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ========================================
+   ENTERPRISE THEME (New - Navy/Teal/Gold)
+   Secure, Trustworthy, Professional
+   ======================================== */
+[data-theme="enterprise"] {
+  /* Backgrounds - Deeper, more serious */
+  --color-dark: #0c1222;
+  --color-darker: #070d18;
+  --color-surface: #111827;
+  --color-surface-elevated: #1e293b;
+
+  /* Text */
+  --color-light: #f1f5f9;
+  --color-muted: #94a3b8;
+
+  /* Borders - Subtle blue tint */
+  --color-border: #1e3a5a;
+  --color-border-light: #334155;
+
+  /* Primary Accent (Teal/Emerald - Trust & Security) */
+  --color-primary: #14b8a6;
+  --color-primary-dim: #0d9488;
+  --color-primary-glow: rgba(20, 184, 166, 0.12);
+  --color-primary-text: #0c1222;
+
+  /* Secondary (Deep Navy Blue - Authority) */
+  --color-secondary: #3b82f6;
+  --color-secondary-dim: #1d4ed8;
+  --color-secondary-glow: rgba(59, 130, 246, 0.12);
+
+  /* Tertiary (Steel/Slate - for tracking/transit) */
+  --color-tertiary: #64748b;
+  --color-tertiary-dim: #475569;
+  --color-tertiary-glow: rgba(100, 116, 139, 0.15);
+
+  /* Status Colors */
+  --color-success: #10b981;
+  --color-success-glow: rgba(16, 185, 129, 0.12);
+  --color-danger: #f43f5e;
+  --color-danger-glow: rgba(244, 63, 94, 0.12);
+  --color-warning: #f59e0b;
+  --color-warning-glow: rgba(245, 158, 11, 0.12);
+  --color-info: #0ea5e9;
+  --color-info-glow: rgba(14, 165, 233, 0.12);
+
+  /* Verification/Badge Colors - Gold for premium feel */
+  --color-verified: #fbbf24;
+  --color-verified-bg: rgba(251, 191, 36, 0.1);
+  --color-verified-border: rgba(251, 191, 36, 0.3);
+
+  /* Gradient */
+  --gradient-primary: linear-gradient(135deg, #14b8a6, #0d9488);
+  --gradient-hero: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(20, 184, 166, 0.1), transparent);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ========================================
+   BASE STYLES
+   ======================================== */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--color-dark);
+  color: var(--color-light);
+  -webkit-font-smoothing: antialiased;
+}
+
+[data-theme="enterprise"] body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-mono {
+  font-family: 'Space Mono', monospace;
+}
+
+/* ========================================
+   THEME-AWARE UTILITY CLASSES
+   ======================================== */
+
+/* Backgrounds */
+.bg-theme-dark { background-color: var(--color-dark); }
+.bg-theme-darker { background-color: var(--color-darker); }
+.bg-theme-surface { background-color: var(--color-surface); }
+.bg-theme-surface-elevated { background-color: var(--color-surface-elevated); }
+
+/* Text */
+.text-theme-light { color: var(--color-light); }
+.text-theme-muted { color: var(--color-muted); }
+.text-theme-primary { color: var(--color-primary); }
+.text-theme-secondary { color: var(--color-secondary); }
+.text-theme-tertiary { color: var(--color-tertiary); }
+
+/* Borders */
+.border-theme { border-color: var(--color-border); }
+.border-theme-light { border-color: var(--color-border-light); }
+.border-theme-primary { border-color: var(--color-primary); }
+
+/* Primary color utilities */
+.bg-theme-primary { background-color: var(--color-primary); }
+.bg-theme-primary-glow { background-color: var(--color-primary-glow); }
+.text-theme-primary-contrast { color: var(--color-primary-text); }
+
+/* Status utilities */
+.bg-theme-success { background-color: var(--color-success); }
+.bg-theme-success-glow { background-color: var(--color-success-glow); }
+.text-theme-success { color: var(--color-success); }
+
+.bg-theme-danger { background-color: var(--color-danger); }
+.bg-theme-danger-glow { background-color: var(--color-danger-glow); }
+.text-theme-danger { color: var(--color-danger); }
+
+.bg-theme-warning { background-color: var(--color-warning); }
+.bg-theme-warning-glow { background-color: var(--color-warning-glow); }
+.text-theme-warning { color: var(--color-warning); }
+
+/* Verified badge */
+.bg-theme-verified { background-color: var(--color-verified); }
+.bg-theme-verified-subtle { background-color: var(--color-verified-bg); }
+.border-theme-verified { border-color: var(--color-verified-border); }
+.text-theme-verified { color: var(--color-verified); }
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.animation-delay-100 { animation-delay: 0.1s; }
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-300 { animation-delay: 0.3s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+.animation-delay-500 { animation-delay: 0.5s; }
+
+/* ========================================
+   THEME TRANSITION
+   ======================================== */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
 }
