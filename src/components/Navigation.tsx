@@ -29,11 +29,8 @@ export default function Navigation() {
             <li><Link href="#testimonials" className="text-[var(--color-muted)] no-underline text-sm font-medium hover:text-[var(--color-light)] transition-colors">Testimonials</Link></li>
           </ul>
 
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center gap-3">
-            <Link href="#" className="px-6 py-3 rounded-lg text-sm font-semibold text-[var(--color-light)] bg-transparent hover:bg-[var(--color-surface)] transition-all">
-              Log In
-            </Link>
+          {/* CTA Button */}
+          <div className="hidden md:flex items-center">
             <Link href="#cta" className="px-6 py-3 rounded-lg text-sm font-semibold bg-[var(--color-primary)] text-[var(--color-primary-text)] hover:opacity-90 hover:-translate-y-0.5 transition-all">
               Get Early Access
             </Link>
@@ -63,11 +60,8 @@ export default function Navigation() {
               <li><Link href="#how-it-works" className="text-[var(--color-muted)] no-underline text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>How It Works</Link></li>
               <li><Link href="#testimonials" className="text-[var(--color-muted)] no-underline text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>Testimonials</Link></li>
             </ul>
-            <div className="flex flex-col gap-3 mt-4">
-              <Link href="#" className="w-full text-center px-6 py-3 rounded-lg text-sm font-semibold text-[var(--color-light)] bg-[var(--color-surface)]">
-                Log In
-              </Link>
-              <Link href="#cta" className="w-full text-center px-6 py-3 rounded-lg text-sm font-semibold bg-[var(--color-primary)] text-[var(--color-primary-text)]">
+            <div className="mt-4">
+              <Link href="#cta" className="w-full text-center block px-6 py-3 rounded-lg text-sm font-semibold bg-[var(--color-primary)] text-[var(--color-primary-text)]" onClick={() => setMobileMenuOpen(false)}>
                 Get Early Access
               </Link>
             </div>
