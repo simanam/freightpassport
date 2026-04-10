@@ -64,7 +64,7 @@ const panels: Panel[] = [
     label: 'SCREEN',
     headline: (
       <>
-        25 rules. <span className="text-critical">Under 1 ms.</span>
+        34 rules. <span className="text-critical">Under 1 ms.</span>
       </>
     ),
     sub: 'Every state change screened before the database commits. Critical hits block the transition.',
@@ -456,7 +456,7 @@ function ScreenVisual() {
       ))}
 
       <div className="mt-3 text-center font-mono text-[10px] text-[#6B8FFF]">
-        25/25 passed · 0.7ms
+        34/34 passed · 0.7ms
       </div>
     </div>
   );

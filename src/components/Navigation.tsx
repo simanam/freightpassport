@@ -10,6 +10,7 @@ const navLinks = [
   { href: '#rules', label: 'Fraud engine' },
   { href: '#security', label: 'Security' },
   { href: '#roadmap', label: 'Roadmap' },
+  { href: '/how-it-works', label: 'Deep dive' },
 ];
 
 function Logo() {

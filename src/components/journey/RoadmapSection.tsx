@@ -17,7 +17,7 @@ const phases: Phase[] = [
     bullets: [
       'Identity tiers (Bronze / Silver / Gold)',
       'Sealed pickup + receiver-signed POD',
-      'Ed25519 signing, 21 fraud rules',
+      'Ed25519 signing, 34 fraud rules',
     ],
     state: 'live',
   },
@@ -89,7 +89,7 @@ export default function RoadmapSection() {
           </h2>
           <p className="mt-4 text-base md:text-lg text-ink-muted">
             The backend is the product. Each release adds a new surface on top of the same
-            crypto chain, same identity tiers, same 25 fraud rules.
+            crypto chain, same identity tiers, same 34 fraud rules.
           </p>
         </div>
 

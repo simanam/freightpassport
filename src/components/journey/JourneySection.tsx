@@ -67,7 +67,7 @@ const nodes: Node[] = [
   { key: 'unlock',  label: 'Unlock',  sub: 'Geofence + live photo + SMS OTP at the dock',    icon: Dock },
   { key: 'carry',   label: 'Carry',   sub: 'Signed transit check-ins · ELD or SMS every 4 hrs', icon: Truck },
   { key: 'sign',    label: 'Sign',    sub: 'Receiver signs on their own device',             icon: Signature },
-  { key: 'prove',   label: 'Prove',   sub: 'Physics check + 25 fraud rules · POD verifiable anywhere', icon: Shield },
+  { key: 'prove',   label: 'Prove',   sub: 'Physics check + 34 fraud rules · POD verifiable anywhere', icon: Shield },
 ];
 
 export default function JourneySection() {

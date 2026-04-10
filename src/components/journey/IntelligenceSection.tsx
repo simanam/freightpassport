@@ -17,6 +17,10 @@ const critical: Rule[] = [
   { n: 21, name: 'Zombie Org',             what: 'Member from suspended Org' },
   { n: 23, name: 'Route divergence',       what: 'Transit GPS > 50 mi off route' },
   { n: 25, name: 'Dual-source GPS split',  what: 'ELD and SMS disagree by > 20 mi' },
+  { n: 28, name: 'Unverified driver swap', what: 'Bypassing identity via late swap' },
+  { n: 29, name: 'Unverified custody',     what: 'Unauthorized custody handoff' },
+  { n: 32, name: 'Multi-stop skip',        what: 'Stop ETA missed, prior stop on time' },
+  { n: 34, name: 'Account takeover',       what: 'New device + IP on dormant account' },
 ];
 
 export default function IntelligenceSection() {
@@ -33,7 +37,7 @@ export default function IntelligenceSection() {
             id="rules-heading"
             className="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.05]"
           >
-            25 rules. <span className="text-critical">12 critical.</span>
+            34 rules. <span className="text-critical">17 critical.</span>
           </h2>
           <p className="mt-4 text-base md:text-lg text-ink-muted">
             Every state change — pickup, transit check-in, delivery — screened in under a
@@ -89,7 +93,7 @@ export default function IntelligenceSection() {
           {/* footer strip */}
           <div className="px-5 py-3 border-t border-white/10 flex items-center justify-between">
             <span className="font-mono text-[10px] text-white/50">
-              + 13 warning rules screen every state change
+              + 17 warning rules screen every state change
             </span>
             <span className="font-mono text-[10px] text-accent-soft">
               latency &lt; 1ms / rule
