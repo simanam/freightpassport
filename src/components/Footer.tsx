@@ -1,77 +1,87 @@
 import Link from 'next/link';
 
-export default function Footer() {
-  const footerLinks = {
-    product: [
-      { label: 'Features', href: '#solution' },
-      { label: 'How It Works', href: '#how-it-works' },
-      { label: 'Pre-Verification', href: '#pre-verification' },
-      { label: 'AI Capabilities', href: '#ai-powered' }
-    ],
-    company: [
-      { label: 'Contact', href: '#cta' }
-    ]
-  };
+const productLinks = [
+  { label: 'Identity tiers', href: '#identity' },
+  { label: 'How it works', href: '#flow' },
+  { label: 'The fraud', href: '#problem' },
+  { label: 'Fraud engine', href: '#rules' },
+  { label: 'Security', href: '#security' },
+  { label: 'Roadmap', href: '#roadmap' },
+];
 
+const trustLinks = [
+  { label: 'Security', href: '#security' },
+  { label: 'Fraud engine', href: '#rules' },
+];
+
+const companyLinks = [
+  { label: 'Request a pilot', href: '#cta' },
+  { label: 'Contact', href: 'mailto:hello@freightpassport.io' },
+];
+
+export default function Footer() {
   return (
-    <footer className="relative z-10 pt-16 pb-8 border-t border-[var(--color-border)]">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 mb-12">
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 no-underline text-[var(--color-light)] mb-4">
-              <div className="w-10 h-10 rounded-[10px] flex items-center justify-center font-bold text-lg text-[var(--color-primary-text)]" style={{ background: 'var(--gradient-primary)' }}>
+    <footer className="relative z-10 border-t border-border pt-20 pb-10">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+          <div className="col-span-2 md:col-span-1">
+            <Link href="/" className="flex items-center gap-2.5 text-ink mb-5">
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-accent text-accent-ink font-bold text-sm">
                 FP
-              </div>
-              <div className="font-bold text-xl tracking-tight">
-                Freight<span className="text-[var(--color-primary)]">Passport</span>
-              </div>
+              </span>
+              <span className="font-bold tracking-tight">
+                Freight<span className="text-accent">Passport</span>
+              </span>
             </Link>
-            <p className="text-sm text-[var(--color-muted)] max-w-[280px]">
-              The identity layer for American freight. One passport. One truth. Every load verified.
+            <p className="text-sm text-ink-muted leading-relaxed max-w-xs">
+              Cryptographically-sealed chain of custody for freight. Every handoff verifiable.
             </p>
           </div>
 
-          {/* Product Links */}
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider mb-5">Product</h4>
-            <ul className="space-y-3 list-none">
-              {footerLinks.product.map((link, index) => (
-                <li key={index}>
-                  <Link href={link.href} className="text-sm text-[var(--color-muted)] no-underline hover:text-[var(--color-light)] transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company Links */}
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider mb-5">Company</h4>
-            <ul className="space-y-3 list-none">
-              {footerLinks.company.map((link, index) => (
-                <li key={index}>
-                  <Link href={link.href} className="text-sm text-[var(--color-muted)] no-underline hover:text-[var(--color-light)] transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <FooterCol title="Product" links={productLinks} />
+          <FooterCol title="Trust" links={trustLinks} />
+          <FooterCol title="Company" links={companyLinks} />
         </div>
 
-        {/* Bottom */}
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[var(--color-border)] gap-4">
-          <p className="text-sm text-[var(--color-muted)]">
-            © 2025 Freight Passport. All rights reserved.
-          </p>
+        <div className="hairline mt-16" />
 
-          <p className="text-sm text-[var(--color-muted)]">
-            Built by <span className="text-[var(--color-light)]">Logixtecs Solutions LLC</span>
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
+          <p className="text-xs text-ink-subtle">
+            © 2026 Logixtecs Solutions LLC. All rights reserved.
+          </p>
+          <p className="text-xs text-ink-subtle">
+            Cryptographically-sealed chain of custody
           </p>
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterCol({
+  title,
+  links,
+}: {
+  title: string;
+  links: { label: string; href: string }[];
+}) {
+  return (
+    <div>
+      <h4 className="text-xs font-semibold uppercase tracking-[0.12em] text-ink mb-5">
+        {title}
+      </h4>
+      <ul className="flex flex-col gap-3">
+        {links.map((link) => (
+          <li key={link.href}>
+            <Link
+              href={link.href}
+              className="text-sm text-ink-muted hover:text-accent transition-colors"
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

@@ -1,235 +1,254 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 @import "tailwindcss";
 
-/* ========================================
-   STARTUP THEME (Current - Bright Green)
-   ======================================== */
-:root,
-[data-theme="startup"] {
-  /* Backgrounds */
-  --color-dark: #0a0a0b;
-  --color-darker: #050506;
-  --color-surface: #18181b;
-  --color-surface-elevated: #1f1f23;
+/* ------------------------------------------------------------------ */
+/* Trust & Authority theme — light, paper, navy + electric trust blue */
+/* ------------------------------------------------------------------ */
 
-  /* Text */
-  --color-light: #fafafa;
-  --color-muted: #71717a;
+@theme {
+  /* Surfaces — warm off-white "paper" */
+  --color-bg: #F6F3EA;              /* cream paper */
+  --color-bg-tint: #FBF9F2;         /* lighter wash behind sections */
+  --color-surface: #FFFFFF;         /* card */
+  --color-elevated: #FFFFFF;        /* raised card */
+  --color-border: #E6E0CF;          /* warm border */
+  --color-border-strong: #CFC6A9;   /* stronger border */
+  --color-rule: #E6E0CF;
 
-  /* Borders */
-  --color-border: #27272a;
-  --color-border-light: #3f3f46;
+  /* Ink — deep navy */
+  --color-ink: #0A1628;
+  --color-ink-muted: #475569;
+  --color-ink-subtle: #94A3B8;
 
-  /* Primary Accent (Green) */
-  --color-primary: #22c55e;
-  --color-primary-dim: #16a34a;
-  --color-primary-glow: rgba(34, 197, 94, 0.15);
-  --color-primary-text: #0a0a0b;
+  /* Trust blue */
+  --color-accent: #0B5FFF;
+  --color-accent-strong: #083ECB;
+  --color-accent-soft: #6B8FFF;
+  --color-accent-wash: #E8EEFF;
+  --color-accent-ring: rgba(11, 95, 255, 0.35);
+  --color-accent-ink: #FFFFFF;
 
-  /* Secondary (Blue) */
-  --color-secondary: #3b82f6;
-  --color-secondary-dim: #2563eb;
-  --color-secondary-glow: rgba(59, 130, 246, 0.15);
+  /* Navy for dark contrast chips/visuals */
+  --color-navy: #0A1628;
+  --color-navy-soft: #1E2A44;
 
-  /* Tertiary (Purple - for tracking/transit) */
-  --color-tertiary: #8b5cf6;
-  --color-tertiary-dim: #7c3aed;
-  --color-tertiary-glow: rgba(139, 92, 246, 0.15);
+  /* Semantic */
+  --color-critical: #DC2626;
+  --color-critical-wash: #FEF2F2;
+  --color-critical-border: #FCA5A5;
+  --color-warning: #B45309;
+  --color-warning-wash: #FFFBEB;
+  --color-success: #047857;
+  --color-success-wash: #ECFDF5;
+  --color-success-border: #86EFAC;
 
-  /* Status Colors */
-  --color-success: #22c55e;
-  --color-success-glow: rgba(34, 197, 94, 0.15);
-  --color-danger: #ef4444;
-  --color-danger-glow: rgba(239, 68, 68, 0.15);
-  --color-warning: #f59e0b;
-  --color-warning-glow: rgba(245, 158, 11, 0.15);
-  --color-info: #3b82f6;
-  --color-info-glow: rgba(59, 130, 246, 0.15);
+  /* Type */
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
 
-  /* Verification/Badge Colors */
-  --color-verified: #22c55e;
-  --color-verified-bg: rgba(34, 197, 94, 0.1);
-  --color-verified-border: rgba(34, 197, 94, 0.3);
-
-  /* Gradient */
-  --gradient-primary: linear-gradient(135deg, #22c55e, #16a34a);
-  --gradient-hero: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(34, 197, 94, 0.15), transparent);
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ========================================
-   ENTERPRISE THEME (New - Navy/Teal/Gold)
-   Secure, Trustworthy, Professional
-   ======================================== */
-[data-theme="enterprise"] {
-  /* Backgrounds - Deeper, more serious */
-  --color-dark: #0c1222;
-  --color-darker: #070d18;
-  --color-surface: #111827;
-  --color-surface-elevated: #1e293b;
+@layer base {
+  :root { color-scheme: light; }
 
-  /* Text */
-  --color-light: #f1f5f9;
-  --color-muted: #94a3b8;
+  html { scroll-behavior: smooth; }
 
-  /* Borders - Subtle blue tint */
-  --color-border: #1e3a5a;
-  --color-border-light: #334155;
-
-  /* Primary Accent (Teal/Emerald - Trust & Security) */
-  --color-primary: #14b8a6;
-  --color-primary-dim: #0d9488;
-  --color-primary-glow: rgba(20, 184, 166, 0.12);
-  --color-primary-text: #0c1222;
-
-  /* Secondary (Deep Navy Blue - Authority) */
-  --color-secondary: #3b82f6;
-  --color-secondary-dim: #1d4ed8;
-  --color-secondary-glow: rgba(59, 130, 246, 0.12);
-
-  /* Tertiary (Steel/Slate - for tracking/transit) */
-  --color-tertiary: #64748b;
-  --color-tertiary-dim: #475569;
-  --color-tertiary-glow: rgba(100, 116, 139, 0.15);
-
-  /* Status Colors */
-  --color-success: #10b981;
-  --color-success-glow: rgba(16, 185, 129, 0.12);
-  --color-danger: #f43f5e;
-  --color-danger-glow: rgba(244, 63, 94, 0.12);
-  --color-warning: #f59e0b;
-  --color-warning-glow: rgba(245, 158, 11, 0.12);
-  --color-info: #0ea5e9;
-  --color-info-glow: rgba(14, 165, 233, 0.12);
-
-  /* Verification/Badge Colors - Gold for premium feel */
-  --color-verified: #fbbf24;
-  --color-verified-bg: rgba(251, 191, 36, 0.1);
-  --color-verified-border: rgba(251, 191, 36, 0.3);
-
-  /* Gradient */
-  --gradient-primary: linear-gradient(135deg, #14b8a6, #0d9488);
-  --gradient-hero: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(20, 184, 166, 0.1), transparent);
-}
-
-/* ========================================
-   BASE STYLES
-   ======================================== */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--color-dark);
-  color: var(--color-light);
-  -webkit-font-smoothing: antialiased;
-}
-
-[data-theme="enterprise"] body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-.font-mono {
-  font-family: 'Space Mono', monospace;
-}
-
-/* ========================================
-   THEME-AWARE UTILITY CLASSES
-   ======================================== */
-
-/* Backgrounds */
-.bg-theme-dark { background-color: var(--color-dark); }
-.bg-theme-darker { background-color: var(--color-darker); }
-.bg-theme-surface { background-color: var(--color-surface); }
-.bg-theme-surface-elevated { background-color: var(--color-surface-elevated); }
-
-/* Text */
-.text-theme-light { color: var(--color-light); }
-.text-theme-muted { color: var(--color-muted); }
-.text-theme-primary { color: var(--color-primary); }
-.text-theme-secondary { color: var(--color-secondary); }
-.text-theme-tertiary { color: var(--color-tertiary); }
-
-/* Borders */
-.border-theme { border-color: var(--color-border); }
-.border-theme-light { border-color: var(--color-border-light); }
-.border-theme-primary { border-color: var(--color-primary); }
-
-/* Primary color utilities */
-.bg-theme-primary { background-color: var(--color-primary); }
-.bg-theme-primary-glow { background-color: var(--color-primary-glow); }
-.text-theme-primary-contrast { color: var(--color-primary-text); }
-
-/* Status utilities */
-.bg-theme-success { background-color: var(--color-success); }
-.bg-theme-success-glow { background-color: var(--color-success-glow); }
-.text-theme-success { color: var(--color-success); }
-
-.bg-theme-danger { background-color: var(--color-danger); }
-.bg-theme-danger-glow { background-color: var(--color-danger-glow); }
-.text-theme-danger { color: var(--color-danger); }
-
-.bg-theme-warning { background-color: var(--color-warning); }
-.bg-theme-warning-glow { background-color: var(--color-warning-glow); }
-.text-theme-warning { color: var(--color-warning); }
-
-/* Verified badge */
-.bg-theme-verified { background-color: var(--color-verified); }
-.bg-theme-verified-subtle { background-color: var(--color-verified-bg); }
-.border-theme-verified { border-color: var(--color-verified-border); }
-.text-theme-verified { color: var(--color-verified); }
-
-/* ========================================
-   ANIMATIONS
-   ======================================== */
-@keyframes pulse-glow {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  ul, ol { list-style: none; margin: 0; padding: 0; }
+  a { text-decoration: none; color: inherit; }
+  button { cursor: pointer; font: inherit; }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-accent-ink);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
-.animate-pulse-glow {
-  animation: pulse-glow 2s infinite;
+@layer components {
+  .font-mono { font-family: var(--font-mono); }
+
+  /* Paper grain — very subtle dots layered on the cream */
+  .paper {
+    background-color: var(--color-bg);
+    background-image:
+      radial-gradient(rgba(10, 22, 40, 0.035) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  /* Dotted grid backdrop behind hero */
+  .grid-dots {
+    background-image: radial-gradient(rgba(10, 22, 40, 0.08) 1.2px, transparent 1.2px);
+    background-size: 26px 26px;
+    mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  }
+
+  .card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+  }
+
+  .card-shadow {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    box-shadow:
+      0 1px 0 rgba(10, 22, 40, 0.02),
+      0 10px 30px -18px rgba(10, 22, 40, 0.18);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--color-accent-wash);
+    border: 1px solid #C6D4FF;
+    color: var(--color-accent-strong);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .chip-ink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--color-navy);
+    color: #D6E0FF;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1;
+    transition: transform 180ms var(--ease-out-expo),
+                background-color 180ms ease,
+                box-shadow 180ms ease,
+                border-color 180ms ease,
+                color 180ms ease;
+  }
+
+  .btn-primary {
+    background: var(--color-accent);
+    color: var(--color-accent-ink);
+    border: 1px solid var(--color-accent);
+    box-shadow: 0 10px 24px -10px rgba(11, 95, 255, 0.55);
+  }
+  .btn-primary:hover {
+    background: var(--color-accent-strong);
+    border-color: var(--color-accent-strong);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px -10px rgba(11, 95, 255, 0.6);
+  }
+
+  .btn-secondary {
+    background: var(--color-surface);
+    color: var(--color-ink);
+    border: 1px solid var(--color-border-strong);
+  }
+  .btn-secondary:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .hairline {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(to right, transparent, var(--color-border-strong), transparent);
+  }
+
+  /* Section label eyebrow */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-accent-strong);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 22px;
+    height: 1.5px;
+    background: var(--color-accent);
+  }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+/* ---- Keyframes ---- */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.animate-float-delayed {
-  animation: float 6s ease-in-out infinite;
-  animation-delay: 2s;
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(11, 95, 255, 0.4); }
+  70%  { box-shadow: 0 0 0 14px rgba(11, 95, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(11, 95, 255, 0); }
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  opacity: 0;
+@keyframes dash {
+  to { stroke-dashoffset: -24; }
 }
 
-.animation-delay-100 { animation-delay: 0.1s; }
-.animation-delay-200 { animation-delay: 0.2s; }
-.animation-delay-300 { animation-delay: 0.3s; }
-.animation-delay-400 { animation-delay: 0.4s; }
-.animation-delay-500 { animation-delay: 0.5s; }
-
-/* ========================================
-   THEME TRANSITION
-   ======================================== */
-* {
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.35; transform: scale(0.85); }
 }
+
+@keyframes stamp-in {
+  0%   { opacity: 0; transform: rotate(-16deg) scale(1.6); }
+  60%  { opacity: 1; transform: rotate(-14deg) scale(0.95); }
+  100% { opacity: 0.92; transform: rotate(-14deg) scale(1); }
+}
+
+@keyframes flow-dash {
+  to { stroke-dashoffset: -80; }
+}
+
+.animate-fade-up { animation: fade-up 700ms var(--ease-out-expo) both; }
+.animate-pulse-ring { animation: pulse-ring 2.6s ease-out infinite; }
+.animate-dash { stroke-dasharray: 6 6; animation: dash 1.6s linear infinite; }
+.animate-flow-dash { stroke-dasharray: 4 8; animation: flow-dash 2.4s linear infinite; }
+.animate-pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+.animate-stamp { animation: stamp-in 900ms var(--ease-out-expo) both; animation-delay: 400ms; }
