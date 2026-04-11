@@ -60,16 +60,16 @@ export default function IdentitySection() {
     >
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <span className="eyebrow">Identity first</span>
+          <span className="eyebrow">Verified parties</span>
           <h2
             id="identity-heading"
             className="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.05]"
           >
-            Identity <span className="text-accent">precedes</span> cryptography.
+            Real people behind <span className="text-accent">every signature.</span>
           </h2>
           <p className="mt-5 text-base md:text-lg text-ink-muted">
-            A fraudster with valid signatures is still a fraudster. Before any load can be
-            sealed, every party earns a verifiable credential.
+            Before any document is sealed, every party earns a verifiable credential.
+            A signed chain is only as trustworthy as the identities behind it.
           </p>
         </div>
 

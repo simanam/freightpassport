@@ -3,7 +3,7 @@ import VerifierPanel from '@/components/visuals/VerifierPanel';
 
 const pillars = [
   { k: 'Ed25519', v: 'Per-load + platform signatures' },
-  { k: 'AES-256', v: 'Encrypted pickup numbers' },
+  { k: 'Zero-knowledge', v: 'Pickup # commitment hash' },
   { k: 'Append-only', v: 'Postgres trigger, not code' },
   { k: 'Zero biometrics', v: 'We never store them' },
 ];

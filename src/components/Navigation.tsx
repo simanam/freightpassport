@@ -4,13 +4,12 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const navLinks = [
-  { href: '#identity', label: 'Identity' },
-  { href: '#flow', label: 'How it works' },
   { href: '#problem', label: 'The fraud' },
+  { href: '#flow', label: 'How it works' },
   { href: '#rules', label: 'Fraud engine' },
+  { href: '#identity', label: 'Identity' },
   { href: '#security', label: 'Security' },
   { href: '#roadmap', label: 'Roadmap' },
-  { href: '/how-it-works', label: 'Deep dive' },
 ];
 
 function Logo() {

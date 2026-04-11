@@ -23,7 +23,7 @@ const panels: Panel[] = [
         Load passport <span className="text-accent">minted.</span>
       </>
     ),
-    sub: 'Pickup number sealed with AES-256. A fresh Ed25519 keypair binds every future event to this load.',
+    sub: 'Pickup number stored as a zero-knowledge commitment. A fresh Ed25519 keypair binds every future event to this load.',
     visual: <SealVisual />,
   },
   {
@@ -274,7 +274,7 @@ function SealVisual() {
             <path d="M16 22v-6a8 8 0 0116 0v6" stroke="#0A1628" strokeWidth="3" fill="none" />
             <circle cx="24" cy="31" r="2.5" fill="#0B5FFF" />
           </svg>
-          <span className="font-mono text-[11px] font-bold text-accent">AES-256</span>
+          <span className="font-mono text-[11px] font-bold text-accent">SHA-256</span>
         </div>
 
         <div className="w-px h-8 bg-border" />
@@ -434,9 +434,9 @@ function ScreenVisual() {
     >
       <div className="flex items-center justify-between mb-4">
         <div className="flex gap-1.5">
-          <div className="w-2 h-2 rounded-full bg-[#DC2626]" />
-          <div className="w-2 h-2 rounded-full bg-[#D4A24C]" />
-          <div className="w-2 h-2 rounded-full bg-[#047857]" />
+          <div className="w-2 h-2 rounded-full bg-critical" />
+          <div className="w-2 h-2 rounded-full bg-gold" />
+          <div className="w-2 h-2 rounded-full bg-success" />
         </div>
         <span className="font-mono text-[9px] text-white/40 tracking-widest">FRAUD ENGINE</span>
       </div>
@@ -455,7 +455,7 @@ function ScreenVisual() {
         </div>
       ))}
 
-      <div className="mt-3 text-center font-mono text-[10px] text-[#6B8FFF]">
+      <div className="mt-3 text-center font-mono text-[10px] text-accent-soft">
         34/34 passed · 0.7ms
       </div>
     </div>

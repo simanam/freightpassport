@@ -19,7 +19,7 @@ export default function HeroSection() {
                 className="inline-block h-1.5 w-1.5 rounded-full bg-accent animate-pulse-ring"
                 aria-hidden="true"
               />
-              Cryptographic chain of custody for freight
+              Freight fraud prevention
             </span>
 
             <h1
@@ -27,19 +27,18 @@ export default function HeroSection() {
               className="mt-6 text-5xl md:text-6xl lg:text-[66px] font-extrabold tracking-tight leading-[1.02] text-ink animate-fade-up"
               style={{ animationDelay: '80ms' }}
             >
-              A passport for
+              The paper trail
               <br />
-              every load.
-              <br />
-              <span className="text-accent">Fraud dies at the dock.</span>
+              that&rsquo;s <span className="text-accent">fraud-proof.</span>
             </h1>
 
             <p
               className="mt-7 text-lg md:text-xl text-ink-muted max-w-xl leading-snug animate-fade-up"
               style={{ animationDelay: '160ms' }}
             >
-              Verified parties, sealed pickups, and Ed25519-signed PODs. Every handoff
-              cryptographically bound to the load before it. Forgery detected in milliseconds.
+              Three documents move every load: pickup number, BOL, POD. Today they&rsquo;re
+              faxed, emailed, and forged. FreightPassport seals all three into one
+              cryptographic chain. Forgery caught in under a second.
             </p>
 
             <div
@@ -50,29 +49,29 @@ export default function HeroSection() {
                 Request a pilot
                 <Arrow />
               </Link>
-              <Link href="#flow" className="btn btn-secondary">
-                See how it works
+              <Link href="#problem" className="btn btn-secondary">
+                See the fraud
               </Link>
             </div>
 
-            {/* One-line mental model */}
+            {/* Three-document mental model */}
             <div
               className="mt-12 flex flex-wrap items-center gap-2.5 text-[12px] font-mono animate-fade-up"
               style={{ animationDelay: '320ms' }}
             >
               <span className="text-ink-subtle uppercase tracking-widest text-[10px]">
-                How it works
+                The chain
               </span>
               <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-white border border-border">
-                Verify parties
-              </span>
-              <Sep />
-              <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-white border border-border">
-                Seal the load
+                Pickup # sealed
               </span>
               <Sep />
               <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-white border border-border">
-                Sign at handoff
+                BOL signed
+              </span>
+              <Sep />
+              <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-white border border-border">
+                POD fingerprinted
               </span>
               <Sep />
               <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-accent text-white border border-accent">

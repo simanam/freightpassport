@@ -30,7 +30,7 @@ export default function SecurityShield() {
         <circle cx="200" cy="200" r="128" fill="none" stroke="#CFC6A9" strokeWidth="1" />
         {/* Ring 3: Ed25519 signing */}
         <circle cx="200" cy="200" r="102" fill="none" stroke="url(#ring)" strokeWidth="1.5" />
-        {/* Ring 4: AES encryption */}
+        {/* Ring 4: Zero-knowledge commitment */}
         <circle cx="200" cy="200" r="78" fill="none" stroke="url(#ring)" strokeWidth="2" />
         {/* Ring 5: Append-only DB */}
         <circle cx="200" cy="200" r="52" fill="#fff" stroke="#0B5FFF" strokeWidth="2.5" />
@@ -55,7 +55,7 @@ export default function SecurityShield() {
           <text x="200" y="52" textAnchor="middle" letterSpacing="1.2">RATE LIMITING · 429 ON ABUSE</text>
           <text x="200" y="80" textAnchor="middle" letterSpacing="1.0" fill="#0A1628">TLS 1.3 · CORS ALLOWLIST</text>
           <text x="200" y="106" textAnchor="middle" letterSpacing="1.0" fill="#083ECB">Ed25519 · PER-LOAD KEYPAIR</text>
-          <text x="200" y="130" textAnchor="middle" letterSpacing="0.8" fill="#083ECB">AES-256-GCM · PICKUP #</text>
+          <text x="200" y="130" textAnchor="middle" letterSpacing="0.8" fill="#083ECB">ZERO-KNOWLEDGE · PICKUP #</text>
           <text x="200" y="156" textAnchor="middle" letterSpacing="0.6" fontWeight="700" fill="#0A1628">APPEND-ONLY POSTGRES</text>
         </g>
       </svg>

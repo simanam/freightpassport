@@ -21,7 +21,7 @@ const defenseLayers = [
     number: 4,
     title: 'Cryptographic Binding',
     description:
-      'Ed25519 per-load + platform keys. AES-256 encrypted pickup numbers. Hash-chained append-only audit log. External hash anchors every 6 hours.',
+      'Ed25519 per-load + platform keys. Zero-knowledge pickup number commitments. Hash-chained append-only audit log. External hash anchors every 6 hours.',
   },
   {
     number: 5,
