@@ -101,19 +101,21 @@ export default function IdentityDeepDive() {
     >
       <div className="max-w-6xl mx-auto px-6">
         {/* ── Part 1: Two-layer model ── */}
-        <span className="eyebrow">Identity &amp; trust</span>
+        <span className="eyebrow">Verified parties</span>
 
         <h2
           id="identity-heading"
           className="mt-6 text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.05] text-ink"
         >
-          Identity precedes&nbsp;cryptography.
+          Real people behind every&nbsp;signature.
         </h2>
 
         <p className="mt-7 text-base md:text-lg text-ink-muted max-w-3xl leading-relaxed">
-          A perfectly signed load from a fake broker is just fraud with a
-          signature. Every Organization and Member must be verified before any
-          load can be&nbsp;created.
+          The document chain is only as trustworthy as the identities behind it.
+          2025 Fraud Fighters winner Highway excels at verifying the carrier
+          before tender. FreightPassport extends that foundation downstream —
+          every Organization and Member must be verified before any load can
+          be&nbsp;sealed.
         </p>
 
         {/* Two-layer diagram */}

@@ -28,11 +28,11 @@ export default function HowItWorks() {
       <Navigation />
       <main id="main">
         <HowHero />
-        <IdentityDeepDive />
         <LoadLifecycle />
         <CryptoDeepDive />
-        <SecurityLayers />
         <FraudRulesDeepDive />
+        <IdentityDeepDive />
+        <SecurityLayers />
         <EdgeCasesGrid />
       </main>
       <Footer />
