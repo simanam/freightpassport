@@ -11,17 +11,19 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "FreightPassport — Every handoff, cryptographically sealed",
+  title: "FreightPassport — Every broker email, every load document, organized automatically",
   description:
-    "Cryptographically-sealed chain of custody for freight. Sealed pickup numbers, receiver-signed PODs, and cross-load signature fingerprinting detect fraud in seconds instead of weeks.",
+    "Connect your inbox. Your loads organize themselves. Find any POD, rate con, or dispute detail in seconds. Built for freight brokers and carrier dispatchers. Read-only, one-click disconnect.",
   keywords: [
-    "freight fraud",
-    "chain of custody",
-    "cryptographic POD",
-    "double brokering",
-    "signature verification",
-    "Ed25519",
-    "broker security",
+    "freight broker software",
+    "load organization",
+    "POD management",
+    "rate confirmation",
+    "freight dispatcher",
+    "carrier software",
+    "freight email",
+    "Outlook freight",
+    "Gmail freight",
   ],
   authors: [{ name: "Logixtecs Solutions LLC" }],
   icons: {
@@ -30,17 +32,17 @@ export const metadata: Metadata = {
     apple: "/favicon.svg",
   },
   openGraph: {
-    title: "FreightPassport — Every handoff, cryptographically sealed",
+    title: "FreightPassport — Every broker email, every load document, organized automatically",
     description:
-      "The POD that can't be forged. Cryptographically-verifiable chain of custody for freight brokers.",
+      "Connect your inbox. Your loads organize themselves. Find any POD, rate con, or dispute detail in seconds.",
     type: "website",
     siteName: "FreightPassport",
   },
   twitter: {
     card: "summary_large_image",
-    title: "FreightPassport — Every handoff, cryptographically sealed",
+    title: "FreightPassport — Your loads, organized automatically",
     description:
-      "Cryptographic chain of custody for freight. Fraud detected in seconds instead of weeks.",
+      "Connect Outlook or Gmail. Rate cons, BOLs, PODs, and invoices get pulled out and attached to the right load. Read-only access.",
   },
 };
 

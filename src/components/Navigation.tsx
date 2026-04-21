@@ -4,12 +4,11 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const navLinks = [
-  { href: '#problem', label: 'The fraud' },
-  { href: '#flow', label: 'How it works' },
-  { href: '#rules', label: 'Fraud engine' },
-  { href: '#identity', label: 'Identity' },
-  { href: '#security', label: 'Security' },
-  { href: '#roadmap', label: 'Roadmap' },
+  { href: '#problem', label: 'The problem' },
+  { href: '#how', label: 'How it works' },
+  { href: '#features', label: 'What you get' },
+  { href: '#privacy', label: 'Privacy' },
+  { href: '#faq', label: 'FAQ' },
 ];
 
 function Logo() {
@@ -17,7 +16,7 @@ function Logo() {
     <Link
       href="/"
       className="flex items-center gap-2.5 text-ink"
-      aria-label="FreightPassport home"
+      aria-label="Freight Passport home"
     >
       <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-accent text-accent-ink font-bold text-[13px]">
         FP
@@ -68,7 +67,7 @@ export default function Navigation() {
 
           <div className="hidden md:block">
             <Link href="#cta" className="btn btn-primary text-sm py-2.5 px-5">
-              Request a pilot
+              Get early access
             </Link>
           </div>
 
@@ -116,7 +115,7 @@ export default function Navigation() {
               className="btn btn-primary mt-4 w-full text-sm"
               onClick={() => setOpen(false)}
             >
-              Request a pilot
+              Get early access
             </Link>
           </div>
         )}

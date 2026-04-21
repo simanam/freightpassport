@@ -1,21 +1,20 @@
 import Link from 'next/link';
 
 const productLinks = [
-  { label: 'Identity tiers', href: '#identity' },
-  { label: 'How it works', href: '#flow' },
-  { label: 'The fraud', href: '#problem' },
-  { label: 'Fraud engine', href: '#rules' },
-  { label: 'Security', href: '#security' },
-  { label: 'Roadmap', href: '#roadmap' },
+  { label: 'How it works', href: '#how' },
+  { label: 'What you get', href: '#features' },
+  { label: 'The problem', href: '#problem' },
+  { label: 'Privacy', href: '#privacy' },
+  { label: 'FAQ', href: '#faq' },
 ];
 
 const trustLinks = [
-  { label: 'Security', href: '#security' },
-  { label: 'Fraud engine', href: '#rules' },
+  { label: 'Privacy', href: '#privacy' },
+  { label: 'Design partners', href: '#partners' },
 ];
 
 const companyLinks = [
-  { label: 'Request a pilot', href: '#cta' },
+  { label: 'Get early access', href: '#cta' },
   { label: 'Contact', href: 'mailto:hello@freightpassport.io' },
 ];
 
@@ -34,7 +33,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-ink-muted leading-relaxed max-w-xs">
-              Cryptographically-sealed chain of custody for freight. Every handoff verifiable.
+              Every broker email, every load document — organized automatically.
             </p>
           </div>
 
@@ -50,7 +49,7 @@ export default function Footer() {
             © 2026 Logixtecs Solutions LLC. All rights reserved.
           </p>
           <p className="text-xs text-ink-subtle">
-            Cryptographically-sealed chain of custody
+            Read-only inbox access · Never shared
           </p>
         </div>
       </div>
