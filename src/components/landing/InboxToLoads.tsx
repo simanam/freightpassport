@@ -17,7 +17,7 @@ export default function InboxToLoads() {
           </div>
           <div className="flex-1 min-w-0 mx-2 sm:mx-4">
             <div className="mx-auto max-w-[260px] text-center text-[10px] sm:text-[11px] font-mono text-ink-subtle bg-white border border-border rounded-md py-1 px-2 sm:px-3 truncate">
-              app.freightpassport.io / dashboard
+              app.freightpassport.ai / dashboard
             </div>
           </div>
           <span className="stat-pill shrink-0">Live</span>

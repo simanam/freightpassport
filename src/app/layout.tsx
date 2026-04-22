@@ -12,7 +12,11 @@ const jakarta = Plus_Jakarta_Sans({
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://freightpassport.io";
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : null) ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null) ||
+  "https://freightpassport.ai";
 
 const PRIMARY_TITLE =
   "Freight Passport — Every broker email, every load document, organized automatically";
