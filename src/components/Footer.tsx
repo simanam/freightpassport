@@ -16,7 +16,7 @@ const trustLinks = [
 
 const companyLinks = [
   { label: 'Get early access', href: '#cta' },
-  { label: 'Contact', href: 'mailto:hello@freightpassport.io' },
+  { label: 'Contact', href: 'mailto:aman@logixtecs.com' },
 ];
 
 export default function Footer() {
