@@ -3,7 +3,12 @@ import Footer from '@/components/Footer';
 import HeroSection from '@/components/landing/HeroSection';
 import PainSection from '@/components/landing/PainSection';
 import HowItWorksSection from '@/components/landing/HowItWorksSection';
-import WhatYouGetSection from '@/components/landing/WhatYouGetSection';
+import FlowDiagram from '@/components/landing/FlowDiagram';
+import ViewsSection from '@/components/landing/ViewsSection';
+import LoadAnatomy from '@/components/landing/LoadAnatomy';
+import MagicLinksSection from '@/components/landing/MagicLinksSection';
+import AlertsSection from '@/components/landing/AlertsSection';
+import MoreSection from '@/components/landing/MoreSection';
 import CredibilitySection from '@/components/landing/CredibilitySection';
 import DesignPartnersSection from '@/components/landing/DesignPartnersSection';
 import PrivacySection from '@/components/landing/PrivacySection';
@@ -18,7 +23,12 @@ export default function Home() {
         <HeroSection />
         <PainSection />
         <HowItWorksSection />
-        <WhatYouGetSection />
+        <FlowDiagram />
+        <ViewsSection />
+        <LoadAnatomy />
+        <MagicLinksSection />
+        <AlertsSection />
+        <MoreSection />
         <CredibilitySection />
         <DesignPartnersSection />
         <PrivacySection />

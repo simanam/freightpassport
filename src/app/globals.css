@@ -236,14 +236,55 @@
   50%      { opacity: 0.35; transform: scale(0.85); }
 }
 
-@keyframes stamp-in {
-  0%   { opacity: 0; transform: rotate(-16deg) scale(1.6); }
-  60%  { opacity: 1; transform: rotate(-14deg) scale(0.95); }
-  100% { opacity: 0.92; transform: rotate(-14deg) scale(1); }
-}
-
 @keyframes flow-dash {
   to { stroke-dashoffset: -80; }
+}
+
+/* --- Ambient motion for the new visuals --- */
+
+@keyframes soft-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
+@keyframes highlight-sweep {
+  0%   { opacity: 0; transform: translateX(-6%); }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(6%); }
+}
+
+@keyframes progress-fill {
+  0%   { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes travel-right {
+  0%   { transform: translateX(-20%); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateX(120%); opacity: 0; }
+}
+
+@keyframes scan-line {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(420%); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(11, 95, 255, 0); }
+  50%      { box-shadow: 0 0 22px 2px rgba(11, 95, 255, 0.28); }
+}
+
+@keyframes stamp-land {
+  0%   { opacity: 0; transform: scale(1.8) rotate(-8deg); }
+  60%  { opacity: 1; transform: scale(0.94) rotate(-4deg); }
+  100% { opacity: 1; transform: scale(1) rotate(-4deg); }
 }
 
 .animate-fade-up { animation: fade-up 700ms var(--ease-out-expo) both; }
@@ -251,4 +292,73 @@
 .animate-dash { stroke-dasharray: 6 6; animation: dash 1.6s linear infinite; }
 .animate-flow-dash { stroke-dasharray: 4 8; animation: flow-dash 2.4s linear infinite; }
 .animate-pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
-.animate-stamp { animation: stamp-in 900ms var(--ease-out-expo) both; animation-delay: 400ms; }
+.animate-soft-float { animation: soft-float 4.8s ease-in-out infinite; }
+.animate-highlight { animation: highlight-sweep 3.2s ease-in-out infinite; }
+.animate-progress { animation: progress-fill 2.6s ease-out both; }
+.animate-travel { animation: travel-right 3.6s linear infinite; }
+.animate-scan { animation: scan-line 3s linear infinite; }
+.animate-glow { animation: glow-pulse 3.4s ease-in-out infinite; }
+.animate-stamp { animation: stamp-land 900ms var(--ease-out-expo) both; animation-delay: 400ms; }
+
+/* Shimmer for data-loading placeholders */
+.shimmer-bg {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(11, 95, 255, 0.08) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.2s linear infinite;
+}
+
+/* Dashed flow line backdrop used in the process diagram */
+.flow-line {
+  background-image: linear-gradient(
+    to right,
+    var(--color-border-strong) 50%,
+    transparent 50%
+  );
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+  background-position: 0 50%;
+}
+
+/* Hairline accents for bento tiles */
+.tile {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+}
+.tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 18px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.tile-raised {
+  box-shadow:
+    0 1px 0 rgba(10, 22, 40, 0.02),
+    0 18px 40px -24px rgba(10, 22, 40, 0.18);
+}
+
+/* Sticker-style pill for numeric badges in visuals */
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--color-navy);
+  color: #D6E0FF;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+}

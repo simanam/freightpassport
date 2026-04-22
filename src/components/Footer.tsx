@@ -2,14 +2,15 @@ import Link from 'next/link';
 
 const productLinks = [
   { label: 'How it works', href: '#how' },
-  { label: 'What you get', href: '#features' },
-  { label: 'The problem', href: '#problem' },
-  { label: 'Privacy', href: '#privacy' },
+  { label: 'Under the hood', href: '#flow' },
+  { label: 'Broker & dispatcher views', href: '#views' },
+  { label: 'Magic upload links', href: '#uploads' },
+  { label: 'Alerts & drafts', href: '#alerts' },
   { label: 'FAQ', href: '#faq' },
 ];
 
 const trustLinks = [
-  { label: 'Privacy', href: '#privacy' },
+  { label: 'Privacy & security', href: '#privacy' },
   { label: 'Design partners', href: '#partners' },
 ];
 
